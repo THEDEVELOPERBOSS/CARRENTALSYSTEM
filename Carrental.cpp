@@ -2,6 +2,11 @@
 #include<string>
 using namespace std;
 
+
+
 int main(){
-	std::cout << "Hi"
+    
+    string car1 = "Ford Raptor"; 
+    string car2 = "Dodge Charger";
+	std::cout << ""
 }
