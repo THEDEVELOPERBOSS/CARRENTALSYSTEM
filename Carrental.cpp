@@ -15,7 +15,7 @@ int main() {
     std::cout << "Choose what you would like to do\n";
     std::cin >> choice1; 
     
-    if (caroption == "Rent a car") {
+    if ((choice1.compare(caroption) == 0) || (choice1.compare(newcar) == 0)) {
 			
 			std::cout << "This shows that it works";
 	}
