@@ -17,9 +17,12 @@ int main() {
     
     if ((choice1.compare(caroption) == 0) || (choice1.compare(newcar) == 0)) {
 			
+			choice1 = caroption;
 			std::cout << "This shows that it works";
 	}
-    
+    else {
+		choice1 = newcar;
+		}
     
     
 }
