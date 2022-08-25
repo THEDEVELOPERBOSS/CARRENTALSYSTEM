@@ -10,20 +10,23 @@ int main() {
     string caroption = "default"; 
     string newcar = "default";
     string choice1 = "default";
-    string identify = "default"
-    
-
+    string admin = "admin";
+    string user = "user";
+    string pin1 = "Code"; 
+	//this will ask if they are an admin or a user. If they are a admin it will allow them to add cars to the program in a user friendly way. 
     std::cout << "Are you an admin or user?\n";
     std::cin >> choice1; 
-    
-    if ((choice1.compare(caroption) == 0) || (choice1.compare(newcar) == 0)) {
-			
-			choice1 = caroption;
-			std::cout << "This shows that it works\n";
-	}
-    else {
-		choice1 = newcar;
+
+	if (choice1 == admin) {
+			std::cout << "Please enter your pin\n";
+			std::cin >> pin1;
 		}
-    
+		else if (choice1 == user) {
+			std::cout << "this shows that it works\n"; 
+			}
+			
+		else{
+			
+			}
     
 }
