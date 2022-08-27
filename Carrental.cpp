@@ -16,10 +16,13 @@ int main() {
     string pin = "default"; 
     string pin1 = "code";
     string pin2 = "Falcon";
+    string choice2 = "default";
+    string error1 = "default"; 
+    string starover = "default";
 	//this will ask if they are an admin or a user. If they are a admin it will allow them to add cars to the program in a user friendly way. 
     std::cout << "Are you an admin or user?\n";
     std::cin >> choice1; 
-//this is if they are an aadmin
+//this is if they are an admin
 	if (choice1 == admin) {
 			::cout << "Please enter your pin\n";
 			std::cin >> pin;
@@ -29,11 +32,16 @@ int main() {
 			}
 			//this is if they do not enter one of the choices 
 		else{
-			std::cout << "You need to choose one of the options displayed on screen.\n";
+			std::cout << "You need to type one of the options displayed on screen.\n";
 			
 			}
 			//this will ask what the the admins what they are doing
-	if (pin == pin1 || pin2) {
-		std::cout << "this shows that it works.\n";
+	if (pin == pin1) {
+		std::cout << "Are you adding a car or renting a car for a customer.\n";
+		std::cin >> choice2;
         }
+   else if (pin == pin2) {
+	   std::cout << "Are you adding a car or renting a car for a customer.\n";
+	   ::cin >> choice2; 
+	   }
 }
