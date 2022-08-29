@@ -10,6 +10,7 @@ int main() {
     string car3 = "Jeep Cherokee";
     string caroption = "default"; 
     string newcar = "default";
+    string newcar2 = "default";
     string choice1 = "default";
     string admin = "admin";
     string user = "user";
@@ -28,13 +29,15 @@ int main() {
 			std::cin >> pin;
 		}//this is if they are a user
 		else if (choice1 == user) {
-			std::cout << "this shows that it works\n"; 
+			std::cout << "Type your car choice below we have a Ford Raptor, Dodge Charger, Jeep Cherokee," << newcar << newcar2 << 
+		; "\n";
 			}
 			//this is if they do not enter one of the choices 
 		else{
 			std::cout << "You need to type one of the options displayed on screen.\n";
 			
 			}
+	if ()
 			//this will ask what the the admins what they are doing
 	if (pin == pin1) {
 		std::cout << "Are you adding a car or renting a car for a customer.\n";
