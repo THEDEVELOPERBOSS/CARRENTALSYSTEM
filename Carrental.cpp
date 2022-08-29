@@ -39,7 +39,7 @@ int main() {
 			}
 	if ()
 			//this will ask what the the admins what they are doing
-	if (pin == pin1) {
+	if if (pin == pin1) {
 		std::cout << "Are you adding a car or renting a car for a customer.\n";
 		std::cin >> choice2;
         }
