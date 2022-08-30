@@ -39,8 +39,9 @@ int main() {
 			std::cout << "You need to type one of the options displayed on screen.\n";
 			}
 	if (caroption == car1){
-	    std::cout << "Please enter the month 1 = January, 2 = Febuary, 3 = March, etc\n";
+	    std::cout << "Please enter the month 1 = January, 2 = Febuary, 3 = March, etc\nd";
 	    std::cin >> car1date;
+	    \\ hopefully this will make it so I can add days to the date. 
 	    string car1date = car1date + 7;
 	    
 	}
