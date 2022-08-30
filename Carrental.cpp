@@ -20,6 +20,7 @@ int main() {
     string choice2 = "default";
     string error1 = "default"; 
     string starover = "default";
+    string car1date = "default";
 	//this will ask if they are an admin or a user. If they are a admin it will allow them to add cars to the program in a user friendly way. 
     std::cout << "Are you an admin or user?\n";
     std::cin >> choice1; 
@@ -31,15 +32,20 @@ int main() {
 		else if (choice1 == user) {
 			std::cout << "Type your car choice below we have a Ford Raptor, Dodge Charger, Jeep Cherokee," << newcar << newcar2 << 
 		; "\n";
+		cin:: >> caroption; 
 			}
 			//this is if they do not enter one of the choices 
 		else{
 			std::cout << "You need to type one of the options displayed on screen.\n";
-			
 			}
-	if ()
+	if (caroption == car1){
+	    std::cout << "Please enter the month 1 = January, 2 = Febuary, 3 = March, etc\n";
+	    std::cin >> car1date;
+	    string car1date = car1date + 7;
+	    
+	}
 			//this will ask what the the admins what they are doing
-	if if (pin == pin1) {
+	if (pin == pin1) {
 		std::cout << "Are you adding a car or renting a car for a customer.\n";
 		std::cin >> choice2;
         }
