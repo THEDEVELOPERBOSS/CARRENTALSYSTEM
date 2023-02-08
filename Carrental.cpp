@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string> 
+#include"Car.h"
 //using std namespace will make it so yoiu can say cout instead of std::cout
 using namespace std;
 
@@ -17,20 +18,26 @@ int main() {
 	 string Raptor = "Ford Raptor";
 	 string Jeep = "Jeep Cheorkee";
 	 string charger = "Dodge Charger";
-	 int code = "2681";
-	 int choiceone = 0;
+	 int code = 2681;
+	 char choiceone = 'd';
 
-	 cout << "Are you are customer or employee?";
-	 	  << "1 for customer and 2 for employee";
+	 cout << "Are you are customer or employee?\n Type 'c' for customer and 'e' for employee\n";
 	 cin >> choiceone;
 
-	 if (choiceone == 1) {
-		cout << "Renting a car or returning a car?";// figure out how to make code jump to a certain line
+	switch(choiceone) {
 
+		case 'c':
+		cout << "ok";
+		break;
+		case 'e':
+		cout << "MAKE ME MONEYS";
+		break;
+		default:
+		cout << "Never gonna give you up";
+	}
 
 	 }
 
-	}
 	 
 	 
 	 
