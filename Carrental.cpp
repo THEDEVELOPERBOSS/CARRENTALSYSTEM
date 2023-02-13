@@ -1,48 +1,37 @@
 #include<iostream>
 #include<string> 
-#include"Car.h"
+#include"Carsubs.h"
 //using std namespace will make it so yoiu can say cout instead of std::cout
 using namespace std;
 
-
-class Car { 
-
-	Car(int car = 0) {}
-	~Car () {} 
-	void Speed(int speed = 0) {}
-	void Brake(int brake = 0) {}
-};
-
 int main() {
 	
-	 string Raptor = "Ford Raptor";
-	 string Jeep = "Jeep Cheorkee";
-	 string charger = "Dodge Charger";
-	 int code = 2681;
-	 char choiceone = 'd';
+	char choiceone = 'd';
+	 char choicetwo = 'z';
 
+	 cout << "Type R to go back to the begining at any time\n";
 	 cout << "Are you are customer or employee?\n Type 'c' for customer and 'e' for employee\n";
 	 cin >> choiceone;
+while (true) {
+		switch(choiceone) {
 
-	switch(choiceone) {
+			case 'e':
+			cout << submenue();
+			break;
+			case 'c':
+			cout << "Are returning a car or renting a car?\n Type a for returning a car and b for renting a car.\n";
+			cin >> choicetwo;
+			case 'a':
+			submenure;
+			break;
+			default:
+			cout << "That is not valid";
+			
+			continue; // restarts the while loop
+		}
+}
+}
 
-		case 'c':
-		cout << "ok";
-		break;
-		case 'e':
-		cout << "MAKE ME MONEYS";
-		break;
-		default:
-		cout << "Never gonna give you up";
-	}
-
-	 }
-
-	 
-	 
-	 
-	 
-	 
 	 
 	 
 	 
