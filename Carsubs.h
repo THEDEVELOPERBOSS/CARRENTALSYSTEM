@@ -359,7 +359,7 @@ char submenue()
     }
     else
     {
-      cout << "That is not vaild";
+      cout << "That is not valid";
     }
 
     return 0;
