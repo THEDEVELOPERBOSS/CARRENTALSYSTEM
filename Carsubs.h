@@ -168,7 +168,7 @@ char submenurn()
   carReturn = "<BLANK>";
 }
 
-// this is the menu that will run if an employee or customer is returnig a car
+// this is the menu that will run if an employee or customer is returnig a car to the system
 char submenure()
 {
   cout << "These are the cars:\n";
@@ -359,7 +359,7 @@ char submenue()
     }
     else
     {
-      cout << "That is not valid";
+      cout << "That is not vaild";
     }
 
     return 0;
