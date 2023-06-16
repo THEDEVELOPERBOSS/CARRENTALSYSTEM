@@ -23,18 +23,6 @@ int main()
 	json data;
 	data["testVar"] = testVar;
 
-	// Save the JSON object to a file
-	ofstream outputFile("data.json");
-	if(outputFile.is_open()) 
-	{
-		outputFile << data.dump(4); // dump with indentation of 4 spaces
-		outputFile.close();
-		cout << "Variables saved to file" << endl;
-	}
-		else 
-		{
-			cout << "Unable to open file for writing" << endl;
-		}
 	// Load the variables from the file
 	ifstream inputFile("data.json");
 	if (inputFile.is_open()) 
@@ -49,9 +37,10 @@ int main()
 		cout << "Unable to open file for reading" << endl;
 	}
 
+
 while (true) {
 	 cout << "\nType R to go back to the begining at any time\n";
-	 cout << "Are you are customer or employee?\n Type 'Customer' for customer and 'Employee' for employee\n";
+	 cout << "Are you are customer or employee?\n Type 'Customer' for customer and 'Employee' for employee or type test for the test variable\n";
 	 getline (cin, choiceone);
 		if (choiceone == "Employee")
 		{
@@ -79,6 +68,25 @@ while (true) {
 				}
 				choicetwo = choiceTwoR;
 		}
+		else if (choiceone == "test") 
+		{
+			cout << "This is what it currently equals: " << testVar;
+			cout << "Change it too:";
+			cin >> testVar;
+
+				// Save the JSON object to a file
+	ofstream outputFile("data.json");
+	if(outputFile.is_open()) 
+	{
+		outputFile << data.dump(4); // dump with indentation of 4 spaces
+		outputFile.close();
+		cout << "Variables saved to file" << endl;
+	}
+		else 
+		{
+			cout << "Unable to open file for writing" << endl;
+		}
+		}
 			else
 			{
 				cout << "Please try again";
@@ -87,6 +95,7 @@ while (true) {
 		}
 		
 		cout << "Goodbye\n";
+
 }
 
 
