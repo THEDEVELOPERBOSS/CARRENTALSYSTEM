@@ -2,6 +2,7 @@
 #include<string> 
 #include<fstream>
 #include"Carsubs.h"
+#include"restartFunc.h"
 #include <nlohmann/json.hpp>
 
 // Alias for convience of saving variables to external file
