@@ -50,8 +50,8 @@ while (true) {
 		}
 		else if (choiceone == "R")
 		{
-			cout << "Starting over";
 			choicetwo = choiceTwoR;
+			restartFunc;
 		}
 		else if (choiceone == "Customer"){
 			cout << "Are returning a car or renting a car?\n Type Returning for returning a car and Renting for renting a car.\n";

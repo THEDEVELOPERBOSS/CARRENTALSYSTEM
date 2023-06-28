@@ -1,7 +1,7 @@
-#include "restart.h"
+#include "restartFunc.h"
 #include <unstid.h> // for exed functions
 
-void restartFunc() 
+char restartFunc() 
 {
     // get the path to the main file
     char path[1024];

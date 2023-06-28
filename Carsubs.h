@@ -93,7 +93,12 @@ string NameR;                        // this will allow me to set the name back 
 string caroneFN = caroneB + caroneN; // these are the full names of the car
 string cartwoFN = cartwoB + cartwoN;
 
-int dateRE = 0; // this will allow me to reset the variables quickly
+// restart variables
+string wishToRestart = "<Blank>";  
+string wishY = "Yes"; 
+string wishN = "No";
+
+int dateRE = 0; // this will allow me to reset the int variables quickly
 char submenurn()
 {
 
