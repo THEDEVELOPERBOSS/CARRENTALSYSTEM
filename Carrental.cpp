@@ -2,7 +2,7 @@
 #include<string> 
 #include<fstream>
 #include"Carsubs.h"
-#include"restartFunc.h"
+#include"restart.h"
 #include <nlohmann/json.hpp>
 
 // Alias for convience of saving variables to external file
@@ -51,7 +51,8 @@ while (true) {
 		else if (choiceone == "R")
 		{
 			choicetwo = choiceTwoR;
-			restartFunc;
+
+			restart();
 		}
 		else if (choiceone == "Customer"){
 			cout << "Are returning a car or renting a car?\n Type Returning for returning a car and Renting for renting a car.\n";

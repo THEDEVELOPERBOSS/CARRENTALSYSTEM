@@ -1,6 +1,6 @@
 #ifndef RESTART_H
 #define RESTART_H
-
-char restartFunc();
+#include"restart.cpp"
+void restart();
 
 #endif
