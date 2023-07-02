@@ -50,6 +50,8 @@ while (true) {
 		}
 		else if (choiceone == "R")
 		{
+			cout << "Starting over. ";
+			// figure out how to make a time delay like in the hacker python program
 			choicetwo = choiceTwoR;
 
 			restart();
