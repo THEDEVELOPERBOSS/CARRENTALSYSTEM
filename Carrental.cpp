@@ -3,12 +3,11 @@
 #include<fstream>
 #include"Carsubs.h"
 #include"restart.h"
-#include <nlohmann/json.hpp>
-
-// Alias for convience of saving variables to external file
+#include <nlohmann/json.hpp> // this needs to be reinstalled I think 
+// Alias for conveniance
 using json = nlohmann::json;
 
-//using std namespace will make it so yoiu can say cout instead of std::cout
+//using std namespace will make it so you can say cout instead of std::cout
 using namespace std;
 
 int main() 
@@ -17,30 +16,9 @@ int main()
 	string choicetwo;
 	string choiceOneR; // the r stands for return in these two variables
 	string choiceTwoR;
-	// this is the test variable for the save file
-	int testVar = 45;
-
-	// create a JSON object
-	json data;
-	data["testVar"] = testVar;
-
-	// Load the variables from the file
-	ifstream inputFile("data.json");
-	if (inputFile.is_open()) 
-	{
-		json loadedData = json::parse(inputFile);
-		testVar = loadedData["testVar"];
-		inputFile.close();
-		cout << "Variables loaded from file:" << endl;
-		cout << "testVar: " << testVar << endl;
-	}
-	else {
-		cout << "Unable to open file for reading" << endl;
-	}
 
 
 while (true) {
-	 cout << "\nType R to go back to the begining at any time\n";
 	 cout << "Are you are customer or employee?\n Type 'Customer' for customer and 'Employee' for employee or type test for the test variable\n";
 	 getline (cin, choiceone);
 		if (choiceone == "Employee")
@@ -52,8 +30,7 @@ while (true) {
 		{
 			cout << "Starting over. ";
 			// figure out how to make a time delay like in the hacker python program
-			choicetwo = choiceTwoR;
-
+			choiceone = choiceOneR;
 			restart();
 		}
 		else if (choiceone == "Customer"){
@@ -67,6 +44,10 @@ while (true) {
 				{
 					submenurn();
 				}
+				else if(choicetwo == "R")
+				{
+					restart();
+				}
 				else {
 					cout << "That is not valid";
 				}
@@ -74,22 +55,9 @@ while (true) {
 		}
 		else if (choiceone == "test") 
 		{
-			cout << "This is what it currently equals: " << testVar;
+			cout << "This is what it currently equals: " << "Depricate this";
 			cout << "Change it too:";
-			cin >> testVar;
-
-				// Save the JSON object to a file
-	ofstream outputFile("data.json");
-	if(outputFile.is_open()) 
-	{
-		outputFile << data.dump(4); // dump with indentation of 4 spaces
-		outputFile.close();
-		cout << "Variables saved to file" << endl;
-	}
-		else 
-		{
-			cout << "Unable to open file for writing" << endl;
-		}
+			// cin >> testVar;
 		}
 			else
 			{
@@ -99,7 +67,6 @@ while (true) {
 		}
 		
 		cout << "Goodbye\n";
-
 }
 
 

@@ -1,7 +1,12 @@
-#include <iostream>
-#include <string>
+#include<iostream>
+#include<string>
 #include<fstream>
+#include"restart.h"
+#include<nlohmann/json.hpp>
 using namespace std;
+// Alias for conveniance
+using json = nlohmann::json;
+
 // these are the variables
 string Raptor = "Ford Raptor";
 string Rstatus = "Available";
@@ -19,7 +24,7 @@ string Jeep = "Jeep Cheorkee";
 string Jstatus = "Available";
 int Jyear = 2001; // year model
 string Jname;
-int jDay = 0;
+int jDay = 0; 
 int jMonth = 0;
 int jYear = 0;
 int jDayRE = 0;
@@ -66,7 +71,7 @@ int tYear = 0;
 int tDayRE = 0;
 int tMonthRE = 0;
 int tYearRE = 0;
-// code variables
+// Employee code variables
 string code = "2681"; // this is the password that employees will need to enter to add cars and ______ etc;
 string codeChoice = "0";
 string nCode; // the variable for the new pin
@@ -97,12 +102,68 @@ string cartwoFN = cartwoB + cartwoN;
 string wishToRestart = "<Blank>";  
 string wishY = "Yes"; 
 string wishN = "No";
+string rVar = "R";
+
+int mainSubs()
+{
+// JSON Stuff
+// Create a JSON object
+vector<json> jsonRaptor = {
+  {
+    {"Rstatus", "Available"}
+  }
+};
+// convert more variables to JSON ones once this works
+json raptorData;
+raptorData["car"] = "Ford Raptor";
+raptorData["year model"] = 2021;
+raptorData["available"] = "True";
+
+//open the ouput file for reading
+ofstream outputFile("outputSubs.json");
+
+if(outputFile.is_open())
+{
+  // Write the JSON object to the file
+  outputFile << raptorData.dump(4); // dump with indentation of 4 spaces
+
+  // close the file
+  outputFile.close();
+
+  // Open the file for reading
+  ifstream inputFile("ouput.json");
+
+  if (inputFile.is_open())
+  {
+    // Read the contents of the file into a JSON object
+    json jsonData;
+    inputFile >> jsonData;
+
+    // close the file
+    inputFile.close();
+    
+    // Access and manipulate the JSON data
+    string Rstatus = jsonData["Rstatus"];
+    // what variables I make up there I have to make down here
+
+
+  }else 
+  {
+    cout << "Failed to open file for reading" << endl;
+  }
+}else 
+  {
+    cout << "Failed to open file for writing" << endl;
+  }
+  return 0;
+
+}
 
 int dateRE = 0; // this will allow me to reset the int variables quickly
 char submenurn()
 {
 
-  cout << "What is the car that you are returning?\n";
+  cout << "What is the car that you are returning? You can also type R to start over here\n";
   getline(cin, carReturn);
   if (carReturn == Raptor || "Raptor")
   {
@@ -129,7 +190,11 @@ char submenurn()
     cout << "What is your name\n";
     getline(cin, Name);
   }
-  else {}
+  else if ( carReturn == "R" || "r")
+  {
+    restart();
+  }
+
   // make sure for all of them it asks for their names
   if (Name == rName & Rstatus == nVail)
   {
@@ -192,9 +257,6 @@ char submenure()
   {
     cout << cartwoB << " " << cartwoN << " is " << tStatus << " Type: " << cartwoN << "\n";
   }
-  else
-  {
-  }
 
   cout << Raptor << " is " << Rstatus << " Type: Raptor"
        << " \n";
@@ -202,11 +264,12 @@ char submenure()
        << " \n";
   cout << Charger << " is " << Cstatus << " Type: Charger"
        << " \n";
-  cout << "Type what car you would like to rent "
+  cout << "Type what car you would like to rent or type R to start over"
        << " \n";
 
   getline(cin, carWant);
-  if (carWant == "Raptor" & Rstatus == aVail)
+  // if they want the Ford Raptor
+  if (carWant == "Raptor" & Rstatus == aVail) // this is the section where they choose their car
   {
     cout << "Please enter today's date. MM/DD/YY\n";
     cin >> rMonth;
@@ -219,6 +282,7 @@ char submenure()
     cout << "Please return the car within one month\n";
     Rstatus = nVail;
   }
+  // if they want the Jeep Cheorkee
   else if (carWant == "Jeep" & Jstatus == aVail)
   {
     cout << "Please enter today's date. MM/DD/YY\n";
@@ -230,6 +294,7 @@ char submenure()
     cout << "Please return it in a month max\n";
     Jstatus = nVail;
   }
+  // if they want the Dodge Charger
   else if (carWant == "Charger" & Cstatus == aVail)
   {
     cout << "Please enter today's date. MM/DD/YY\n";
@@ -243,6 +308,7 @@ char submenure()
     cout << "Please return the car within one month\n";
     Cstatus = nVail;
   }
+  // if they want the 1st varied car
   else if (carWant == caroneN & oStatus == aVail)
   {
     cout << "Please enter today's date. MM/DD/YY\n";
@@ -256,6 +322,7 @@ char submenure()
     cout << "Please return the car within one month\n";
     oStatus = nVail;
   }
+  // if they want the second varied car
   else if (carWant == cartwoN & tStatus == aVail)
   {
     cout << "Please enter today's date. MM/DD/YY\n";
@@ -269,6 +336,12 @@ char submenure()
     cout << "Please return the car within one month\n";
     tStatus = nVail;
   }
+  // if they wish to start over
+  else if (carWant == "R" || "r") 
+  {
+    restart();
+  }
+  // if what they type is not valid
   else
   {
     cout << "That is not valid\n";
@@ -281,20 +354,20 @@ char submenure()
 // This is the menu that will run if e is typed (employee)
 char submenue()
 {
-  cout << "What is the code?\n";
+  cout << "What is the code?\n"; 
   cin >> codeChoice;
-  if (codeChoice == code)
+  if (codeChoice == code) // if the code is correct
   {
     cout << "That is correct\n";
-    cout << "Are you adding a car(Car) changing the pin(Pin) reviewing return dates(Dates) or changing the number of attempts allowed for the pin(Attempts): ";
+    cout << "Are you adding a car(Car) changing the pin(Pin) reviewing return dates(Dates) changing the code(Code) or changing the number of attempts allowed for the pin(Attempts): ";
     cin >> eChoicetwo;
-    if (eChoicetwo == "Code")
+    if (eChoicetwo == "Code") // if they would like to change the code 
     {
       cout << "What would you like to change the code too?:";
       cin >> nCode;
       code = nCode;
     }
-    else if (eChoicetwo == "Car")
+    else if (eChoicetwo == "Car") // if they are adding a car
     {
       cout << "Type the info for the car you are adding. \n";
       if (caroneN == caroneNC || caroneY == caroneYC || caroneB == caroneBC) // the c in the variables stand for check
@@ -319,7 +392,7 @@ char submenue()
       }
       return 0;
     }
-    else if (eChoicetwo == "Attempts")
+    else if (eChoicetwo == "Attempts") // if they are changing the number of attempts allowed to put in the code
     {
       cout << "What would you like to change the number of attempts to?: ";
       cin >> nAttempts;
@@ -337,7 +410,7 @@ char submenue()
         rChoice = rChoiceR;
       }
     }
-
+    // maybe make it so it emails them and adds intrest instead of doing this
     else if (eChoicetwo == "Dates")
     {
       rChoice = rChoiceR;
@@ -356,7 +429,7 @@ char submenue()
       }
       else if (rChoice == "No")
       {
-        cout << "YOU THINK I CARE?";
+        cout << "YOU THINK I CARE? YOU ARE DOING IT ANYWAY";
         rChoice = rChoiceR;
       }
       else
