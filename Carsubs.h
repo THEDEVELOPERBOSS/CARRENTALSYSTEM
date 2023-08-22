@@ -445,7 +445,10 @@ char submenue()
   }
   else
   {
-
+    cout << "That is incorrect please try again"; // make this so that it gives them mulitple attempts to enter the password
+    nAttempts = 1;
+    // codeChoice == 0;
+    cin >> codeChoice;
     return 0; // figure out how to make it go back to the beginning
   }
 }

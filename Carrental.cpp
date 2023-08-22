@@ -47,7 +47,7 @@ while (true) {
 				else if(choicetwo == "R")
 				{
 					restart();
-				}
+			}
 				else {
 					cout << "That is not valid";
 				}
