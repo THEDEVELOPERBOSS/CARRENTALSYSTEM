@@ -1,4 +1,4 @@
-#include "restart.h"
+#include "restart.hpp"
 #include <unistd.h> // for exec functions
 
 void restart() 
