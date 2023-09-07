@@ -1,7 +1,7 @@
 #include<iostream>
-#include"Carsubs.hpp"
+#include"variables.hpp"
 
-uisng namespace std; 
+using namespace std; 
 char codechecker()
 {
   if (counter != nAttempts)

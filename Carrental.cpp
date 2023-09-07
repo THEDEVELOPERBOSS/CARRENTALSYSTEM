@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string> 
 #include<fstream>
+#include"variables.hpp"
 #include"Carsubs.hpp"
 #include"restart.hpp"
 #include <nlohmann/json.hpp> // this needs to be reinstalled I think 
