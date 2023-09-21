@@ -1,6 +1,8 @@
 #include<iostream>
-#include"variables.hpp"
-
+// variables that aren't working in variables.hpp
+// employees code variables
+int nAttempts = 5; // this is a variable that will store the number of attempts allowed and it can be changed by the employee or manager
+int counter = 0;   // this is a variable to count how many times they have entered the passcode incorreclty
 using namespace std; 
 char codechecker()
 {

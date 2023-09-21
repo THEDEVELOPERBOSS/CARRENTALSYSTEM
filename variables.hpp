@@ -73,8 +73,9 @@ string code = "2681"; // this is the password that employees will need to enter 
 string codeChoice = "0";
 string nCode; // the variable for the new pin
 string cChange = "Change the pin";
-int counter = 0;   // this is a variable to count how many times they have entered the passcode incorreclty
 int nAttempts = 5; // this is a variable that will store the number of attempts allowed and it can be changed by the employee or manager
+int counter = 0;   // this is a variable to count how many times they have entered the passcode incorreclty
+
 // choosing what car (below)
 // etc
 string carWant;

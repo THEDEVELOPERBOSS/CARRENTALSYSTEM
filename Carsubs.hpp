@@ -1,14 +1,13 @@
 #include<iostream>
 #include<string>
 #include<fstream>
-#include"restart.hpp"
-#include"codeChecker.hpp"
 #include"variables.hpp"
 #include<nlohmann/json.hpp>
 using namespace std;
 // Alias for conveniance
 using json = nlohmann::json;
-
+// variables that aren't working in variables.hpp
+// Employee code varibles
 
 int mainSubs()
 {
