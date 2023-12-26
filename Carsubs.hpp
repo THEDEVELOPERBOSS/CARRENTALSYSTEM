@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<dos.h>
 #include"variables.hpp"
 #include<nlohmann/json.hpp>
 using namespace std;

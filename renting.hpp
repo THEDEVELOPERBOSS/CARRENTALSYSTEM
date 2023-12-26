@@ -33,15 +33,11 @@ char submenure()
   if (carWant == "Raptor" & Rstatus == aVail) // this is the section where they choose their car
   {
     cout << "Please enter today's date. MM/DD/YY\n";
-    cin >> rMonth;
-    cout << "";
-    cin >> rDay;
-    cout << "";
-    cin >> rYear;
-    cout << "What is your name?\n";
-    getline(cin, rName);
+    cin >> rMonth >> rDay >> rYear;
+    cout << "What is your name? First then Last Name\n";
+    cin >> rName >> rLame;
     cout << "Please return the car within one month\n";
-    Rstatus = nVail;
+    Rstatus = nVail; // changes the status so that other customers can't rent it. 
   }
   // if they want the Jeep Cheorkee
   else if (carWant == "Jeep" & Jstatus == aVail)
@@ -49,9 +45,11 @@ char submenure()
     cout << "Please enter today's date. MM/DD/YY\n";
     cin >> jMonth;
     cout << "";
-    cin >> jDay;
+    cin >> jDay; 
     cout << "";
     cin >> jYear;
+    cout << "What is your name? Please connect first and last name with _\n";
+    cin >> jName;
     cout << "Please return it in a month max\n";
     Jstatus = nVail;
   }
@@ -64,8 +62,8 @@ char submenure()
     cin >> cDay;
     cout << "";
     cin >> cYear;
-    cout << "What is your name?\n";
-    getline(cin, Cname);
+    cout << "What is your name? Please connect first and last name with _\n";
+    cin >> cName;
     cout << "Please return the car within one month\n";
     Cstatus = nVail;
   }
@@ -78,8 +76,8 @@ char submenure()
     cin >> oDay;
     cout << "";
     cin >> oYear;
-    cout << "What is your name?\n";
-    getline(cin, caroneRN);
+    cout << "What is your name? Please connect first and last name with _\n";
+    cin >> caroneRN;
     cout << "Please return the car within one month\n";
     oStatus = nVail;
   }
@@ -92,8 +90,8 @@ char submenure()
     cin >> tDay;
     cout << "";
     cin >> tYear;
-    cout << "What is your name";
-    getline(cin, cartwoRN);
+    cout << "What is your name? Please connect first and last name with _\n";
+    cin >> cartwoRN;
     cout << "Please return the car within one month\n";
     tStatus = nVail;
   }

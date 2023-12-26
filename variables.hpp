@@ -8,7 +8,8 @@ using namespace std;
 string Raptor = "Ford Raptor";
 string Rstatus = "Available";
 int Ryear = 2020; // year model
-string rName;     // renters name
+string rName;     // renters first name
+string rLame; // renters last name
 int rDay = 0;
 int rMonth = 0;
 int rYear = 0;
@@ -20,7 +21,7 @@ int rYearRE = 0;
 string Jeep = "Jeep Cheorkee";
 string Jstatus = "Available";
 int Jyear = 2001; // year model
-string Jname;
+string jName;
 int jDay = 0; 
 int jMonth = 0;
 int jYear = 0;
@@ -31,7 +32,7 @@ int jYearRE = 0;
 string Charger = "Dodge Charger";
 string Cstatus = "Available";
 int Cyear = 2016;
-string Cname; // this variable set will allow me to check the name of the renter to make sure it's the right person
+string cName; // this variable set will allow me to check the name of the renter to make sure it's the right person
 int cDay = 0;
 int cMonth = 0;
 int cYear = 0;
@@ -91,8 +92,9 @@ string eChoicetwo;
 string rChoice = "<Blank>";          // this variable and the one below it is for choices that are simple that I will use from now on the one below will reset this one
 const string rChoiceR = "<Blank>";   // the const will make it so the variable can never be changed. This will reset the above one once it has served it's purpose
                                      // this is the return function
-string Name;                         // this is so I don't have to make an if thing to check the name every time
-string NameR;                        // this will allow me to set the name back to what it was before
+string Name;
+string lName;                         // this is so I don't have to make an if thing to check the name every time
+string NameR = "<BLANK>";                        // this will allow me to set the name back to what it was before
 string caroneFN = caroneB + caroneN; // these are the full names of the car
 string cartwoFN = cartwoB + cartwoN;
 

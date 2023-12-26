@@ -64,7 +64,7 @@ while (true) {
 		}
 			else
 			{
-				cout << "Please try again";
+				cout << "Please try again ";
 				choicetwo = choiceTwoR;
 			}
 		}
