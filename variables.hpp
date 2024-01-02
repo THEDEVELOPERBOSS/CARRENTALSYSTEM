@@ -22,6 +22,7 @@ string Jeep = "Jeep Cheorkee";
 string Jstatus = "Available";
 int Jyear = 2001; // year model
 string jName;
+string jLame; // renters last name
 int jDay = 0; 
 int jMonth = 0;
 int jYear = 0;

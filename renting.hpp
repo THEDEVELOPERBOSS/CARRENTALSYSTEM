@@ -40,18 +40,15 @@ char submenure()
     Rstatus = nVail; // changes the status so that other customers can't rent it. 
   }
   // if they want the Jeep Cheorkee
-  else if (carWant == "Jeep" & Jstatus == aVail)
+  else if (carWant == "Cheorkee" & Jstatus == aVail)
   {
     cout << "Please enter today's date. MM/DD/YY\n";
-    cin >> jMonth;
-    cout << "";
-    cin >> jDay; 
-    cout << "";
-    cin >> jYear;
-    cout << "What is your name? Please connect first and last name with _\n";
-    cin >> jName;
-    cout << "Please return it in a month max\n";
-    Jstatus = nVail;
+    cin >> jMonth >> jDay >> jYear;
+    cout << "What is your name? First then Last Name\n";
+    cin >> jName >> jLame;
+    cout << "Please return the car within one month\n";
+    Jstatus = nVail; // changes the status so that other customers can't rent it. 
+    
   }
   // if they want the Dodge Charger
   else if (carWant == "Charger" & Cstatus == aVail)
