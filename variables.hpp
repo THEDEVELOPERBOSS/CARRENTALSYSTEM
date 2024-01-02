@@ -6,7 +6,7 @@ using namespace std;
 
 // these are the variables
 string Raptor = "Ford Raptor";
-string shorterR = "Raptor";
+string shorterR = "Raptor"; // these are the shorter versions of the car names used in the return program as main use
 string Rstatus = "Available";
 int Ryear = 2020; // year model
 string rName;     // renters first name
@@ -20,6 +20,7 @@ int rYearRE = 0;
 //(above) variables for the Ford Raptor
 //(below) variables for the Jeep Cherokee
 string Jeep = "Jeep Cheorkee";
+string shorterJ = "Jeep";
 string Jstatus = "Available";
 int Jyear = 2001; // year model
 string jName; // renters first name
@@ -32,6 +33,7 @@ int jMonthRE = 0;
 int jYearRE = 0;
 //(below) variables for the Dodge Charger
 string Charger = "Dodge Charger";
+string shorterC = "Dodge";
 string Cstatus = "Available";
 int Cyear = 2016;
 string cName; // this variable set will allow me to check the name of the renter to make sure it's the right person
