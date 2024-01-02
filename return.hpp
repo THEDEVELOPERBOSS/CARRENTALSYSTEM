@@ -5,11 +5,24 @@ char submenurn()
 
   cout << "What is the car that you are returning? You can also type R to start over here\n";
   getline(cin, carReturn);
-  if (carReturn == Raptor || "Raptor") // maybe make so you can put last name in too
+  if ((Rstatus == nVail) && (carReturn == shorterR || carReturn == Raptor)) // add a checker to make sure the car is out(maybe its already exists)
   {
-    cout << "What is your name? Please type First and Last name \n";
-    cin >> Name >> lName;
-  }
+    cout << "What is your name? Please type First and Last name (in that order)\n";
+    cin >> Name >> lName; // this is going to gather the names
+    if (rName == Name && rLame == lName)// cross reference the last names here
+    {
+      cout << "Those are the correct names"; 
+      Name = NameR;
+      lName = NameR; 
+    }
+    else 
+    {
+      cout << Name << " "<< lName << "do not match with the names in database";
+      Name = NameR;
+      lName = NameR;
+      restart();
+    }
+    }
   else if (carReturn == Jeep)
   {
     cout << "What is your name? Please connect first and last name with a _  \n";
@@ -32,7 +45,12 @@ char submenurn()
   }
   else if ( carReturn == "R" || "r")
   {
-    restart();   }
+    restart();   
+    }
+  else 
+  {
+    cout << "That does not match any of the cars we have in our database or the car is unavailable";
+  }
 
   // make sure for all of them it asks for their names
   if (Name == rName & Rstatus == nVail)

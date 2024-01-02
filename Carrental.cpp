@@ -24,7 +24,7 @@ int main()
 while (true) {
 	 cout << "Are you are customer or employee?\n Type 'Customer' for customer and 'Employee' for employee or type test for the test variable\n";
 	 getline (cin, choiceone);
-		if (choiceone == "Employee")
+		if (choiceone == "Employee") // add case for lowercase one and test more than once
 		{
 			cout << submenue();
 			choiceone = choiceOneR;
@@ -36,7 +36,7 @@ while (true) {
 			choiceone = choiceOneR;
 			restart();
 		}
-		else if (choiceone == "Customer"){
+		else if (choiceone == "Customer" || "customer"){
 			cout << "Are returning a car or renting a car?\n Type Returning for returning a car and Renting for renting a car.\n";
 			getline (cin, choicetwo);
 				if(choicetwo == "Renting")

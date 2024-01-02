@@ -6,6 +6,7 @@ using namespace std;
 
 // these are the variables
 string Raptor = "Ford Raptor";
+string shorterR = "Raptor";
 string Rstatus = "Available";
 int Ryear = 2020; // year model
 string rName;     // renters first name
@@ -21,7 +22,7 @@ int rYearRE = 0;
 string Jeep = "Jeep Cheorkee";
 string Jstatus = "Available";
 int Jyear = 2001; // year model
-string jName;
+string jName; // renters first name
 string jLame; // renters last name
 int jDay = 0; 
 int jMonth = 0;
@@ -104,3 +105,5 @@ string wishToRestart = "<Blank>";
 string wishY = "Yes"; 
 string wishN = "No";
 string rVar = "R";
+
+
