@@ -37,6 +37,7 @@ string shorterC = "Dodge";
 string Cstatus = "Available";
 int Cyear = 2016;
 string cName; // this variable set will allow me to check the name of the renter to make sure it's the right person
+string cLame; // renters last name
 int cDay = 0;
 int cMonth = 0;
 int cYear = 0;

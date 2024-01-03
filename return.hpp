@@ -5,7 +5,7 @@ char submenurn()
 
   cout << "What is the car that you are returning? You can also type R to start over here\n";
   getline(cin, carReturn);
-  // this next part works but only if the car has actually been taken out
+  // this next part works but only if the car has actually been taken out take that into account when testing
   // bring this over to the rest of the systems. 
   if ((Rstatus == nVail) && (carReturn == shorterR || carReturn == Raptor)) // add a checker to make sure the car is out(maybe its already exists)
   {
@@ -19,7 +19,7 @@ char submenurn()
     }
     else 
     {
-      cout << Name << " "<< lName << "do not match with the names in database";
+      cout << Name << " "<< lName << "do not match with the names in database. Please try again.";
       Name = NameR; // these reset the name variables for the next use. 
       lName = NameR;
       restart(); // I don't think this is working yet
@@ -37,16 +37,29 @@ char submenurn()
     }
     else 
     {
-      cout << Name << " "<< lName << "do not match with the names in database";
+      cout << Name << " "<< lName << "do not match with the names in database. Please try again.";
       Name = NameR;
       lName = NameR;
       restart();
     }
   }
-  else if (carReturn == Charger)
+  else if ((Cstatus == nVail) && (carReturn == shorterC || carReturn == Charger))
   {
-    cout << "What is your name? Please connect first and last name with a _  \n";
-    getline(cin, Name);
+    cout << "What is your name? Please type First and Last name (in that order)\n";
+    cin >> Name >> lName; // this is going to gather the names
+    if (cName == Name && cLame == lName)// cross reference the last names here
+    {
+      cout << "Those are the correct names"; 
+      Name = NameR;
+      lName = NameR; // resest both the names for the next use 
+    }
+    else 
+    {
+      cout << Name << " "<< lName << "do not match with the names in database. Please try again.";
+      Name = NameR;
+      lName = NameR;
+      restart();
+    }
   }
   else if (carReturn == caroneFN)
   {
