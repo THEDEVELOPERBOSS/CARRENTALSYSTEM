@@ -3,7 +3,31 @@
 #include<nlohmann/json.hpp>
 #include<fstream>
 using namespace std;
-
+// classes are going to start being made here
+class Car {
+private: 
+    string make;
+    string model;
+    int year;
+    bool rented; // bools can hold true or false values
+    
+public:
+    // Constructor 
+    Car(string make, string model, int year) { 
+        this->make = make;
+        this->model = model;
+        this->year = year;
+        rented = false;
+    }
+}
+// Function to rent car
+void rentCar() {
+    rented = true;
+}
+// Function to return the car
+void returnCar() {
+    
+}
 // these are the variables
 string Raptor = "Ford Raptor";
 string shorterR = "Raptor"; // these are the shorter versions of the car names used in the return program as main use
@@ -51,8 +75,10 @@ string caroneYC;
 string caroneY; // year model of car
 string caroneNC;
 string caroneN; // name of car
-string oStatus = "Available";
+string caroneS; // shorter name of the car. Make a way for this way to be entered on the employee side
+string oStatus = "Available"; // the cars status
 string caroneRN; // the renters name
+string caroneRL; // the renters last name
 int oDay = 0;
 int oMonth = 0;
 int oYear = 0;

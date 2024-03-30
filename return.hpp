@@ -18,14 +18,14 @@ char submenurn()
       lName = NameR; 
     }
     else 
-    {
+    { // check if this next line is even needed in this and the rest of the cars
       cout << Name << " "<< lName << "do not match with the names in database. Please try again.";
       Name = NameR; // these reset the name variables for the next use. 
       lName = NameR;
-      restart(); // I don't think this is working yet
+      restart(); // I don't think this is working yet project wide
     }
     }
-   else if ((Jstatus == nVail) && (carReturn == shorterJ || carReturn == Jeep))
+\\\\\  else if ((Jstatus == nVail) && (carReturn == shorterJ || carReturn == Jeep))
   {
      cout << "What is your name? Please type First and Last name (in that order)\n";
     cin >> Name >> lName; // this is going to gather the names
@@ -61,10 +61,23 @@ char submenurn()
       restart();
     }
   }
-  else if (carReturn == caroneFN)
+  else if ((ostatus == nVail) && (carReturn == caroneS || carReturn == caroneN)) // update these next two 
   {
-    cout << "What is your name? Please connect first and last name with a _  \n";
-    getline(cin, Name);
+    cout << "What is your name? Please type First and Last name (in that order)\n";
+    cin >> Name >> lName; // this is going to gather the names
+    if (caroneRN == Name && caroneRL == lName)// cross reference the last names here
+    {
+      cout << "Those are the correct names"; 
+      Name = NameR;
+      lName = NameR; // resest both the names for the next use 
+    }
+    else 
+    {
+      cout << Name << " "<< lName << "do not match with the names in database. Please try again.";
+      Name = NameR;
+      lName = NameR;
+      restart();
+    }
   }
   else if (carReturn == cartwoFN)
   {
@@ -79,7 +92,7 @@ char submenurn()
   {
     cout << "That does not match any of the cars we have in our database or the car is unavailable";
   }
-
+  // this next part needs to be redone I think 
   // make sure for all of them it asks for their names
   if (Name == rName & Rstatus == nVail)
   {
